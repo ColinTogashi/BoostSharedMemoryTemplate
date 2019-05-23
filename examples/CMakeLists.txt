@@ -23,3 +23,6 @@ SET(Boost_USE_STATIC_RUNTIME OFF)
 
 ADD_EXECUTABLE(example main.cpp)
 TARGET_LINK_LIBRARIES(example -lrt ${Boost_LIBRARIES} Eigen3::Eigen)
+
+ADD_EXECUTABLE(client client.cpp)
+TARGET_LINK_LIBRARIES(client -lrt ${Boost_LIBRARIES} Eigen3::Eigen)
