@@ -34,3 +34,5 @@ INSTALL(FILES
         "${BOOST_SHARED_MEMORY_TEMPLATE_INCLUDE}/SharedMemory.tpp"
         DESTINATION ${CMAKE_INSTALL_PREFIX}/include/BoostSharedMemoryTemplate)
 INSTALL(FILES cmake/FindBoostSharedMemoryTemplate.cmake DESTINATION ${CMAKE_ROOT}/Modules)
+
+ADD_SUBDIRECTORY(examples)
