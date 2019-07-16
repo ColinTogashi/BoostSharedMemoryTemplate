@@ -66,13 +66,8 @@ int main() {
     // std::cout << "Struct values 2: " << struct_output.vector[0] << ", " << struct_output.vector[1] << "\n";
     // std::cout << "Struct values 3: " << struct_output.ptr[0] << ", " << struct_output.ptr[1] << "\n";
     // std::cout << "Vector values: " << vector_output[0] << ", " << vector_output[1] << ", " << vector_output[2] << "\n";
-    std::cout << "Dynamic values: " << dynamic_output[0] << ", " << dynamic_output[1] << ", " << dynamic_output[2] << "\n";
+    // std::cout << "Dynamic values: " << dynamic_output[0] << ", " << dynamic_output[1] << ", " << dynamic_output[2] << "\n";
     // std::cout << "Dynamic Eigen values: " << dynamic_eigen_output[0] << ", " << dynamic_eigen_output[1] << ", " << dynamic_output[2] << "\n";
-    
-    while (true) {
-        sleep(1);
-    }
-
 
     return 0;
 }

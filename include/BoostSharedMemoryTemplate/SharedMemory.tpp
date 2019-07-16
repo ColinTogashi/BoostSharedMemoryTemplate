@@ -15,20 +15,13 @@ SharedMemory<T>::SharedMemory(const std::string &robot_mem_name) :
     shm.truncate(sizeof(T));
 
     // Map to the entire region
-    mem_region_ptr_ = new boost::interprocess::mapped_region(shm, boost::interprocess::read_write);
+    mem_region_ptr_.reset(new boost::interprocess::mapped_region(shm, boost::interprocess::read_write));
     
     // Create the pointers to the memory block and the semaphore
     mem_ptr_ = static_cast<T*>(mem_region_ptr_->get_address());
-    mem_semaphore_ptr_ = new boost::interprocess::named_semaphore(boost::interprocess::open_or_create, sem_name.c_str(), 1);
+    mem_semaphore_ptr_.reset(new boost::interprocess::named_semaphore(boost::interprocess::open_or_create, sem_name.c_str(), 1));
 
 };
-
-template<class T>
-SharedMemory<T>::~SharedMemory() {
-    // delete pointers created through new
-    delete mem_region_ptr_;
-    delete mem_semaphore_ptr_;
-}
 
 template<class T>
 T SharedMemory<T>::GetData() {

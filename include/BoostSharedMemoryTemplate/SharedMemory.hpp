@@ -13,14 +13,12 @@ private:
     const std::string robot_mem_name_;
 
 protected:
-    // TODO: make these smart pointers?
     T *mem_ptr_;
-    boost::interprocess::named_semaphore *mem_semaphore_ptr_;
-    boost::interprocess::mapped_region *mem_region_ptr_;
+    std::shared_ptr<boost::interprocess::named_semaphore> mem_semaphore_ptr_;
+    std::shared_ptr<boost::interprocess::mapped_region> mem_region_ptr_;
 
 public:
     SharedMemory(const std::string &robot_mem_name);
-    ~SharedMemory();
     virtual T GetData();
     virtual void SetData(const T &data);
 
