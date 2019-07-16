@@ -14,7 +14,7 @@ IF(NOT Boost_FOUND)
     message( FATAL_ERROR "Boost libarary Not Found!!!!")
 ENDIF()
 
-FIND_PACKAGE(Boost 1.58.0 REQUIRED COMPONENTS system thread regex)
+FIND_PACKAGE(Boost 1.65.0 REQUIRED COMPONENTS system thread regex)
 
 INCLUDE_DIRECTORIES("${Boost_INCLUDE_DIRS}")
 SET(Boost_USE_STATIC_LIBS OFF)
